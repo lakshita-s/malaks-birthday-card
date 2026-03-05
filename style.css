@@ -10,17 +10,22 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-font-family: "westsac", sans-serif;
+font-family: "english", sans-serif;
 font-weight: 400;
-font-style: normal;
+font-style: normal;  font-weight: 400;
+  font-style: normal;
   overflow: hidden;
+}
+
+#page-wrapper {
+  position: relative;
+  width: min(320px, 80vw);
 }
 
 #card-wrapper {
   position: relative;
-  width: min(320px, 80vw);
+  width: 100%;
   aspect-ratio: 923 / 2000;
-  margin-bottom: -28%;
 }
 
 #card-wrapper img {
@@ -48,7 +53,37 @@ font-style: normal;
   pointer-events: none;
 }
 
+/* Text sits absolutely over the empty bottom portion of the card */
+#subtitle {
+  position: absolute;
+  bottom: 14%;
+  left: 0;
+  width: 100%;
+  color: #c9184a;
+  font-size: 1rem;
+  text-align: center;
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+  z-index: 20;
+  pointer-events: none;
+}
 
+#hint {
+  position: absolute;
+  bottom: 18%;
+  left: 0;
+  width: 100%;
+  font-family: "westsac", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #e05c8a;
+  font-size: 1rem;
+  text-align: center;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  z-index: 20;
+  pointer-events: none;
+}
 
 #message-overlay {
   position: fixed;
@@ -60,13 +95,15 @@ font-style: normal;
   justify-content: center;
   z-index: 100;
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.6s ease;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
   padding: 2rem;
 }
 
 #message-overlay.show {
   opacity: 1;
+  visibility: visible;
   pointer-events: all;
 }
 
@@ -74,7 +111,6 @@ font-style: normal;
   max-width: 340px;
   width: 100%;
   text-align: center;
-  animation: none;
 }
 
 #cat-img {
@@ -86,21 +122,22 @@ font-style: normal;
 }
 
 #message-box h1 {
-font-family: "westsac", sans-serif;
-font-weight: 400;
-font-style: normal;  color: #b3123f;
+  font-family: "westsac", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #b3123f;
   font-size: 2.2rem;
   margin-bottom: 0.8rem;
 }
 
 #message-box p {
-    font-family: "westsac", sans-serif;
+font-family: "english", sans-serif;
 font-weight: 400;
-font-style: normal;
+font-style: normal;  font-weight: 400;
+  font-style: normal;
   color: #7a2040;
   font-size: 1.2rem;
   line-height: 1.8;
-  font-weight: 300;
 }
 
 #confetti-canvas {
@@ -108,31 +145,4 @@ font-style: normal;
   inset: 0;
   pointer-events: none;
   z-index: 99;
-}
-
-#page-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#subtitle {
-  color: #c9184a;
-  font-size: 1rem;
-  text-align: center;
-  letter-spacing: 0.05em;
-  line-height: 1.6;
-  margin-top: 1rem;
-}
-
-#hint {
-   font-family: "westsac", sans-serif;
-font-weight: 400;
-font-style: normal;
-  color: #e05c8a;
-  font-size: 1rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  margin-top: 0.5rem;
-  min-height: 1em;
 }

@@ -38,6 +38,7 @@ function startConfetti() {
       c.style.left = '0';
       c.style.zIndex = '9999';
       c.style.pointerEvents = 'none';
+      document.body.appendChild(c);
 
       p.rectMode(p.CENTER);
 
